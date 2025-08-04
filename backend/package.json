@@ -1,7 +1,7 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "MedVault a full stack project on MERN",
+  "description": "MedVault backend folder",
   "main": "index.js",
   "scripts": {
     "start": "node src/index.js",
