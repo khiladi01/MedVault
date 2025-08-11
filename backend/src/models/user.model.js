@@ -37,25 +37,16 @@ const userSchema = new mongoose.Schema({
     gender: {
         type: String,
         required: true,
-        enum: ["male" , "female" , "other"]
+        enum: ["male", "female", "other"]
     },
-    dateofbirth: {
-        type: Date,
+    password: {
+        type: String,
         required: true,
-        validate: {
-            validator: function(value) {
-                return value < new Date();
-            },
-            message: "Date of birth must be in the past."
-        },
-        password:{
-            type:String,
-            required: true,
-            minlength: 6,
-            select: false // Exclude password from queries by default
-        }
+        minlength: 6,
+        select: false // Exclude password from queries by default
     }
-})
+});
+
 const User = mongoose.model("User", userSchema);
 
 export default User;
