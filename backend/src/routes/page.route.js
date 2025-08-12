@@ -2,13 +2,72 @@ import express from "express";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import User from "../models/user.model.js";
+import { upload } from "../utils/multer.js"; // multer is used for file uploads
 
 const router = express.Router();
+
+// Update profile function
+const updateProfile = async (req, res) => {
+    try {
+        // Get user ID from authenticated request
+        const token = req.headers.authorization?.split(" ")[1];
+        if (!token) {
+            return res.status(401).json({ message: "No token provided" });
+        }
+
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        const userId = decoded.id;
+
+        // Get update data from request
+        const { name, email, phone, address, age, weight, gender, prescription } = req.body;
+        
+        // Prepare update object
+        const updateData = {};
+        if (name) updateData.name = name;
+        if (email) updateData.email = email;
+        if (phone) updateData.phone = phone;
+        if (address) updateData.address = address;
+        if (age) updateData.age = age;
+        if (weight) updateData.weight = weight;
+        if (gender) updateData.gender = gender;
+        if (prescription) updateData.prescription = prescription;
+        
+        // Handle avatar upload
+        if (req.file) {
+            updateData.avatar = req.file.path;
+        }
+
+        // Update user in database
+        const updatedUser = await User.findByIdAndUpdate(
+            userId,
+            updateData,
+            { new: true, runValidators: true }
+        ).select("-password");
+
+        if (!updatedUser) {
+            return res.status(404).json({ message: "User not found" });
+        }
+
+        res.status(200).json({
+            message: "Profile updated successfully",
+            user: updatedUser
+        });
+
+    } catch (error) {
+        if (error.name === "JsonWebTokenError") {
+            return res.status(401).json({ message: "Invalid token" });
+        }
+        res.status(500).json({ message: "Server error", error: error.message });
+    }
+};
+
+// Middleware to handle file uploads
+router.put("/update-profile", upload.single("avatar"), updateProfile);
 
 // REGISTER
 router.post("/register", async (req, res) => {
     try {
-        const { name, email, phone, address, age, weight, gender, password } = req.body;
+        const { name, email, phone, address, age, weight, gender, prescription, password } = req.body;
 
         // Check if user exists
         const existingUser = await User.findOne({ email });
@@ -28,6 +87,8 @@ router.post("/register", async (req, res) => {
             age,
             weight,
             gender,
+            prescription,
+            // If avatar is uploaded, it will be handled by multer and stored in req.file
             // Store hashed password    
             password: hashedPassword
         });
