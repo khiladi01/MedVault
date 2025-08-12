@@ -2,51 +2,37 @@ import express from "express";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import User from "../models/user.model.js";
-import { upload } from "../utils/multer.js"; // multer is used for file uploads
+import { upload } from "../utils/multer.js";
 
 const router = express.Router();
 
-// Update profile function
-const updateProfile = async (req, res) => {
+// ================= UPDATE PROFILE =================
+router.put("/update-profile", upload.single("avatar"), async (req, res) => {
     try {
-        // Get user ID from authenticated request
         const token = req.headers.authorization?.split(" ")[1];
-        if (!token) {
-            return res.status(401).json({ message: "No token provided" });
-        }
+        if (!token) return res.status(401).json({ message: "No token provided" });
 
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
         const userId = decoded.id;
 
-        // Get update data from request
-        const { name, email, phone, address, age, weight, gender, prescription } = req.body;
-        
-        // Prepare update object
-        const updateData = {};
-        if (name) updateData.name = name;
-        if (email) updateData.email = email;
-        if (phone) updateData.phone = phone;
-        if (address) updateData.address = address;
-        if (age) updateData.age = age;
-        if (weight) updateData.weight = weight;
-        if (gender) updateData.gender = gender;
-        if (prescription) updateData.prescription = prescription;
-        
-        // Handle avatar upload
+        let updateData = { ...req.body };
+
+        // Hash password if provided
+        if (req.body.password) {
+            updateData.password = await bcrypt.hash(req.body.password, 10);
+        }
+
+        // Handle avatar file upload
         if (req.file) {
             updateData.avatar = req.file.path;
         }
 
-        // Update user in database
-        const updatedUser = await User.findByIdAndUpdate(
-            userId,
-            updateData,
-            { new: true, runValidators: true }
-        ).select("-password");
+        const updatedUser = await User.findByIdAndUpdate(userId, updateData, {
+            new: true,
+            runValidators: true
+        }).select("-password");
 
-        if (!updatedUser) {
-            return res.status(404).json({ message: "User not found" });
-        }
+        if (!updatedUser) return res.status(404).json({ message: "User not found" });
 
         res.status(200).json({
             message: "Profile updated successfully",
@@ -59,15 +45,20 @@ const updateProfile = async (req, res) => {
         }
         res.status(500).json({ message: "Server error", error: error.message });
     }
-};
+});
 
-// Middleware to handle file uploads
-router.put("/update-profile", upload.single("avatar"), updateProfile);
-
-// REGISTER
+// ================= REGISTER =================
 router.post("/register", async (req, res) => {
     try {
-        const { name, email, phone, address, age, weight, gender, prescription, password } = req.body;
+        const {
+            fullname, age, gender, phone, email, address, city, postalcode, password,
+            bloodgroup, weight, allergies, medicalhistory, medications, surgeries,
+            familyhistory, lifestyle, idproof, prescription, emergencycontactname,
+            relationship, emergencycontactphone
+        } = req.body;
+
+        if (!email) return res.status(400).json({ message: "Email is required" });
+        if (!password) return res.status(400).json({ message: "Password is required" });
 
         // Check if user exists
         const existingUser = await User.findOne({ email });
@@ -75,69 +66,47 @@ router.post("/register", async (req, res) => {
             return res.status(400).json({ message: "User already exists" });
         }
 
-        // Hash password
         const hashedPassword = await bcrypt.hash(password, 10);
 
-        // Create new user
         const newUser = await User.create({
-            name,
-            email,
-            phone,
-            address,
-            age,
-            weight,
-            gender,
-            prescription,
-            // If avatar is uploaded, it will be handled by multer and stored in req.file
-            // Store hashed password    
-            password: hashedPassword
+            fullname, age, gender, phone, email, address, city, postalcode,
+            password: hashedPassword, bloodgroup, weight, allergies, medicalhistory,
+            medications, surgeries, familyhistory, lifestyle, idproof, prescription,
+            emergencycontactname, relationship, emergencycontactphone
         });
 
         res.status(201).json({
             message: "User registered successfully",
-            user: {
-                id: newUser._id,
-                email: newUser.email,
-                password: newUser.password // hashed
-            }
+            user: { id: newUser._id, email: newUser.email, fullname: newUser.fullname }
         });
+
     } catch (err) {
         res.status(500).json({ message: "Server error", error: err.message });
     }
 });
 
-// LOGIN
+// ================= LOGIN =================
 router.post("/login", async (req, res) => {
     const { email, password } = req.body;
 
     try {
-        // Check if user exists + explicitly include password
-    const user = await User.findOne({ email }).select("+password");
-    if (!user) {
-      return res.status(400).json({ message: "Invalid email or password" });
-    }
+        const user = await User.findOne({ email }).select("+password");
+        if (!user) {
+            return res.status(400).json({ message: "Invalid email or password" });
+        }
 
-    // console.log("Plain:", password);           // Debug
-    // console.log("Hash:", user.password);       // Debug
+        const isMatch = await bcrypt.compare(password, user.password);
+        if (!isMatch) {
+            return res.status(400).json({ message: "Invalid email or password" });
+        }
 
-    // Compare passwords
-    const isMatch = await bcrypt.compare(password, user.password);
-    if (!isMatch) {
-      return res.status(400).json({ message: "Invalid email or password" });
-    }
+        const token = jwt.sign(
+            { id: user._id, email: user.email },
+            process.env.JWT_SECRET,
+            { expiresIn: "1h" }
+        );
 
-    //  Generate token
-    const token = jwt.sign(
-      { id: user._id, email: user.email },  // payload
-      process.env.JWT_SECRET,               // secret key
-      { expiresIn: "1h" }                   // options
-    );
-
-    // Send response
-    res.status(200).json({
-        message: "User login successfully",
-        token
-    });
+        res.status(200).json({ message: "User login successfully", token });
 
     } catch (err) {
         res.status(500).json({ message: "Server error", error: err.message });
