@@ -2,32 +2,57 @@ import express from "express";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import User from "../models/user.model.js";
+import Appointment from "../models/appointment.model.js";
 import { upload } from "../utils/multer.js";
 
 const router = express.Router();
 
-// ================= UPDATE PROFILE =================
-router.put("/update-profile", upload.single("avatar"), async (req, res) => {
+// ======== TOKEN VERIFY MIDDLEWARE ========
+const verifyToken = (req, res, next) => {
+    let token = null;
+
+    // Check Authorization header
+    if (req.headers.authorization && req.headers.authorization.startsWith("Bearer ")) {
+        token = req.headers.authorization.split(" ")[1];
+    }
+
+    // Check query param (for Thunder Client testing)
+    if (!token && req.query.token) {
+        token = req.query.token;
+    }
+
+    // Check request body (for Thunder Client raw JSON testing)
+    if (!token && req.body.token) {
+        token = req.body.token;
+    }
+
+    if (!token) {
+        return res.status(401).json({ message: "No token provided" });
+    }
+
     try {
-        const token = req.headers.authorization?.split(" ")[1];
-        if (!token) return res.status(401).json({ message: "No token provided" });
-
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
-        const userId = decoded.id;
+        req.userId = decoded.id || decoded.userId;
+        next();
+    } catch (error) {
+        return res.status(401).json({ message: "Invalid or malformed token" });
+    }
+};
 
+// ================= UPDATE PROFILE =================
+router.put("/update-profile", verifyToken, upload.single("avatar"), async (req, res) => {
+    try {
         let updateData = { ...req.body };
 
-        // Hash password if provided
         if (req.body.password) {
             updateData.password = await bcrypt.hash(req.body.password, 10);
         }
 
-        // Handle avatar file upload
         if (req.file) {
             updateData.avatar = req.file.path;
         }
 
-        const updatedUser = await User.findByIdAndUpdate(userId, updateData, {
+        const updatedUser = await User.findByIdAndUpdate(req.userId, updateData, {
             new: true,
             runValidators: true
         }).select("-password");
@@ -40,9 +65,6 @@ router.put("/update-profile", upload.single("avatar"), async (req, res) => {
         });
 
     } catch (error) {
-        if (error.name === "JsonWebTokenError") {
-            return res.status(401).json({ message: "Invalid token" });
-        }
         res.status(500).json({ message: "Server error", error: error.message });
     }
 });
@@ -60,7 +82,6 @@ router.post("/register", async (req, res) => {
         if (!email) return res.status(400).json({ message: "Email is required" });
         if (!password) return res.status(400).json({ message: "Password is required" });
 
-        // Check if user exists
         const existingUser = await User.findOne({ email });
         if (existingUser) {
             return res.status(400).json({ message: "User already exists" });
@@ -110,6 +131,38 @@ router.post("/login", async (req, res) => {
 
     } catch (err) {
         res.status(500).json({ message: "Server error", error: err.message });
+    }
+});
+
+// ================= BOOK APPOINTMENT =================
+router.post("/appointments", verifyToken, async (req, res) => {
+    try {
+        const { doctorName, date, time, reason } = req.body;
+        if (!doctorName || !date || !time) {
+            return res.status(400).json({ message: "Doctor name, date, and time are required" });
+        }
+
+        const appointment = await Appointment.create({
+            user: req.userId,
+            doctorName,
+            date,
+            time,
+            reason
+        });
+
+        res.status(201).json({ message: "Appointment booked successfully", appointment });
+    } catch (error) {
+        res.status(500).json({ message: "Server error", error: error.message });
+    }
+});
+
+// ================= GET USER APPOINTMENTS =================
+router.get("/appointments", verifyToken, async (req, res) => {
+    try {
+        const appointments = await Appointment.find({ user: req.userId });
+        res.status(200).json(appointments);
+    } catch (error) {
+        res.status(500).json({ message: "Server error", error: error.message });
     }
 });
 
