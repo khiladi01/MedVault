@@ -50,7 +50,7 @@ const userSchema = new mongoose.Schema({
         password: {
             type: String,
             required: true, // Password of the user
-            minlenght: 8, // Password must be at least 8 characters long
+            minlength: 8, // Password must be at least 8 characters long
             trim: true // Remove whitespace from password
         },
         bloodgroup: {
@@ -122,7 +122,11 @@ const userSchema = new mongoose.Schema({
             maxlength: 10, // Assuming a maximum length for phone numbers
             trim: true // Remove whitespace from phone
         }
-   });
+   },
+        {
+            timestamps: true // Automatically manage createdAt and updatedAt fields
+        }
+   );
 
 const User = mongoose.model("User", userSchema);
 
