@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import logo from "../../assets/logo/medvaultlogo.png";
+import logo from "../../assets/medvaultlogo.png";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -14,8 +14,8 @@ export default function Navbar() {
     // calling links 
     const navLinks = [
         { href: "/", label: "Home" },
-        { href: "/contact", label: "Contact" },
         { href: "/about", label: "About" },
+        { href: "/contact", label: "Contact" },
         { href: "/book", label: "Appointment" },
         { href: "/auth/login", label: "SignIn" }
     ];
@@ -37,7 +37,7 @@ export default function Navbar() {
                         type="text" 
                         placeholder="Find Doctors Cardiologist, Orthopedic, Neurologist" 
                         className="w-full h-[40px] sm:h-[45px] md:h-[50px] tracking-wider border-[2px] pl-[15px] pr-[40px] 
-                                   font-medium text-xs sm:text-sm md:text-md text-white border-gray-400 outline-0 rounded-full" 
+                                   font-medium text-xs sm:text-sm md:text-md text-white border-gray-400 outline-0 rounded-full selection:bg-slate-600" 
                     />
                     <button 
                         className="absolute right-[12px] flex justify-center items-center text-white transition-colors duration-200"
@@ -99,7 +99,7 @@ export default function Navbar() {
 
             {/* Sales Poster */}
             <div className="h-[25px] w-full bg-slate-300 flex justify-center items-center">
-                <p className="text-gray-600">MedVault Welcomes You🎉</p>
+                <p className="text-gray-600 selection:bg-rose-100 tracking-wider">MedVault Health Care Center</p>
             </div>
         </>
     );

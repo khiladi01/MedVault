@@ -1,6 +1,7 @@
+"use client";
 import Image from "next/image";
+import logo from "../../assets/medvaultlogo.png";
 import Link from "next/link";
-import logo from "../../assets/logo/medvaultlogo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faWhatsapp, faFacebook, faInstagram, faTwitter, faGithub } from "@fortawesome/free-brands-svg-icons";
@@ -202,7 +203,7 @@ export default function FooterBar() {
 
       {/* end */}
       <div className="h-[50px] w-full bg-slate-700 flex justify-center items-center p-[25px]">
-        <p className="text-gray-400 text-sm">© {new Date().getFullYear()} MedVault</p>
+        <p className="text-gray-400 text-sm select-none">© {new Date().getFullYear()} MedVault</p>
       </div>
     </>
   );
