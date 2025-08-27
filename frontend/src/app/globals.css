@@ -27,7 +27,7 @@ body{
 
 /* led */
 #led{
-    background-image: url("https://www.airbeam.tv/wp-content/uploads/2022/12/black-screen-samsung-tv.jpg");
+    background-image: url("./assets/led.jpg");
     background-position: center;
     background-size: cover;
 }
@@ -68,5 +68,6 @@ body{
      transition: all 0.3s ease-in-out;
      cursor: pointer;
 }
+
 
    

@@ -98,8 +98,8 @@ export default function Navbar() {
             </nav>
 
             {/* Sales Poster */}
-            <div className="h-[25px] w-full bg-black flex justify-center items-center">
-                <p className="text-white selection:bg-rose-400 tracking-wider">MedVault Health Care Center</p>
+            <div className="h-[25px] w-full bg-white flex justify-center items-center select-none">
+                <p className="text-slate-700 tracking-wider">MedVault Health Care Center</p>
             </div>
         </>
     );
