@@ -86,7 +86,7 @@ export default function BookPage(){
        </div>
        {/* adding form */}
         <div className="h-[650px] w-full flex justify-center items-center pt-[50px]">
-            <div id="formback" className="h-[600px] w-[600px] border-0 rounded-2xl border-black flex justify-center items-center">
+            <div id="formback" className="h-[500px] w-[600px] border-0 rounded-2xl border-black flex justify-center items-center">
                 <div className="h-[450px] w-[380px] border-0 border-red-400 grid place-content-center">
                        <form
          onSubmit={handleSubmit}
@@ -170,7 +170,6 @@ export default function BookPage(){
     </p>
   </div>
 </div>
-
         </>
     );
 }
