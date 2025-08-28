@@ -276,7 +276,7 @@ export default function Home() {
     <div className="h-auto md:h-[600px] w-full md:w-[450px] border-0 border-black grid place-content-center gap-5">
       {/* phase one of box */}
       <div className="h-[280px] sm:h-[320px] md:h-[360px] w-full max-w-[420px] border-0 border-rose-500 flex justify-center items-center mx-auto">
-        <Image src={cardioImg} alt="Image" className="h-full w-[260px] sm:w-[300px] md:w-[360px] rounded-full border-[2px] border-[#0D47A1]" />
+        <Image src={cardioImg} alt="Image" className="h-full w-[260px] sm:w-[300px] md:w-[360px] rounded-full border-[2px] border-[#0D47A1] hover:scale-110 hover:border-red-400 transition-all ease-in-out duration-200" />
       </div>
 
       {/* phase three of box */}
@@ -297,7 +297,7 @@ export default function Home() {
     {/* phase two image-2 */}
     <div className="h-auto md:h-[600px] w-full md:w-[450px] border-0 border-black grid place-content-center gap-5">
       <div className="h-[280px] sm:h-[320px] md:h-[360px] w-full max-w-[420px] border-0 border-rose-500 flex justify-center items-center mx-auto">
-        <Image src={neuroImg} alt="Image" className="h-full w-[260px] sm:w-[300px] md:w-[360px] rounded-full border-[2px] border-[#0D47A1]" />
+        <Image src={neuroImg} alt="Image" className="h-full w-[260px] sm:w-[300px] md:w-[360px] rounded-full border-[2px] border-[#0D47A1] hover:scale-110 hover:border-red-400 transition-all ease-in-out duration-200" />
       </div>
       <div className="h-auto md:h-[180px] w-full max-w-[420px] border-0 border-rose-500 grid place-content-center gap-2 text-center mx-auto">
         <p className="text-base md:text-lg text-[#0D47A1] font-medium tracking-wide">Dr Nikhil Joshi</p>
@@ -309,14 +309,14 @@ export default function Home() {
           <FontAwesomeIcon icon={faStar} className="text-sm sm:text-base md:text-lg text-[#FFD700]" />
           <FontAwesomeIcon icon={faStar} className="text-sm sm:text-base md:text-lg text-[#FFD700]" />
         </p>
-        <p className="text-[#37474F]">Serving Patients <span className="text-[#0D47A1] text-lg font-medium">15+</span> Yrs</p>
+        <p className="text-[#37474F]">Serving Patients <span className="text-[#0D47A1] text-lg font-medium">20+</span> Yrs</p>
       </div>
     </div>
 
     {/* phase two image-3 */}
     <div className="h-auto md:h-[600px] w-full md:w-[450px] border-0 border-black grid place-content-center gap-5">
       <div className="h-[280px] sm:h-[320px] md:h-[360px] w-full max-w-[420px] border-0 border-rose-500 flex justify-center items-center mx-auto">
-        <Image src={orthoImg} alt="Image" className="h-full w-[260px] sm:w-[300px] md:w-[360px] rounded-full border-[2px] border-[#0D47A1]" />
+        <Image src={orthoImg} alt="Image" className="h-full w-[260px] sm:w-[300px] md:w-[360px] rounded-full border-[2px] border-[#0D47A1] hover:scale-110 hover:border-red-400 transition-all ease-in-out duration-200" />
       </div>
       <div className="h-auto md:h-[180px] w-full max-w-[420px] border-0 border-rose-500 grid place-content-center gap-2 text-center mx-auto">
         <p className="text-base md:text-lg text-[#0D47A1] font-medium tracking-wide">Dr Kalyani Kumari</p>

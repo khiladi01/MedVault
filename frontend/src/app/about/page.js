@@ -2,6 +2,18 @@
 
 import Image from "next/image";
 import aboutImg from "../assets/aboutpageimg.webp";
+import cardioImg from "../assets/cardiologist.jpg"
+import neuroImg from "../assets/neurologist.jpg";
+import orthoImg from "../assets/orthopady.jpg";
+import docOne from "../assets/doctorimg/docImgone.avif";
+import docTwo from "../assets/doctorimg/docImgtwo.jpg";
+import docThree from "../assets/doctorimg/docImgthree.webp";
+import docFour from "../assets/doctorimg/docImgfour.avif";
+import docFive from "../assets/doctorimg/docImgfive.avif";
+import docSix from "../assets/doctorimg/docImgsix.avif";
+import docSeven from "../assets/doctorimg/docImgseven.jpg";
+import docEight from "../assets/doctorimg/docImgeight.webp";
+import docNine from "../assets/doctorimg/docImgnine.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 
@@ -63,7 +75,7 @@ export default function About() {
   <div className="h-auto w-full sm:w-[400px] border-0 border-black grid place-items-center gap-4">
     {/* adding doc profile */}
     <div className="h-[280px] w-[280px] sm:h-[380px] sm:w-[380px] border-0 border-black rounded-full overflow-hidden">
-      <Image src={aboutImg} alt="Image" className="h-full w-full border-2 border-[#0D47A1] rounded-full object-cover" />
+      <Image src={cardioImg} alt="Image" className="h-full w-full border-2 border-[#0D47A1] rounded-full hover:scale-110 hover:border-red-400 transition-all ease-in-out duration-200" />
     </div>
     {/* adding review rating */}
     <div className="h-auto w-full sm:w-[380px] border-0 border-black grid place-content-center gap-2">
@@ -80,7 +92,7 @@ export default function About() {
         Serving Patients <span className="text-[#0D47A1] text-lg font-medium">10+</span> Yrs
       </p>
       {/* adding button */}
-      <button className="h-[35px] w-[150px] text-sm text-white bg-green-800 border-0 border-black rounded-full flex justify-center items-center hover:scale-105 hover:text-md hover:text-rose-50 transition-all ease-in-out duration-200 cursor-pointer">
+      <button className="h-[35px] w-[150px] text-sm text-white bg-green-800 border-0 border-black rounded-full flex justify-center items-center hover:scale-105 hover:text-md hover:text-rose-50 transition-all ease-in-out duration-200 cursor-not-allowed opacity-50">
         Profile
       </button>
     </div>
@@ -89,10 +101,10 @@ export default function About() {
   {/* Card 2 */}
   <div className="h-auto w-full sm:w-[400px] border-0 border-black grid place-items-center gap-4">
     <div className="h-[280px] w-[280px] sm:h-[380px] sm:w-[380px] border-0 border-black rounded-full overflow-hidden">
-      <Image src={aboutImg} alt="Image" className="h-full w-full border-2 border-[#0D47A1] rounded-full object-cover" />
+      <Image src={neuroImg} alt="Image" className="h-full w-full border-2 border-[#0D47A1] rounded-full hover:scale-110 hover:border-red-400 transition-all ease-in-out duration-200" />
     </div>
     <div className="h-auto w-full sm:w-[380px] border-0 border-black grid place-content-center gap-2">
-      <p className="text-base md:text-lg text-[#0D47A1] font-medium tracking-wide">Dr Shruti Mishra</p>
+      <p className="text-base md:text-lg text-[#0D47A1] font-medium tracking-wide">Dr Nikhil Joshi</p>
       <p className="text-sm md:text-base text-[#0097A7] tracking-widest">MBBS (Cardiologist Specialist)</p>
       <p>
         <FontAwesomeIcon icon={faStar} className="text-sm sm:text-base md:text-lg text-[#FFD700]" />
@@ -102,9 +114,9 @@ export default function About() {
         <FontAwesomeIcon icon={faStar} className="text-sm sm:text-base md:text-lg text-[#FFD700]" />
       </p>
       <p className="text-[#37474F]">
-        Serving Patients <span className="text-[#0D47A1] text-lg font-medium">10+</span> Yrs
+        Serving Patients <span className="text-[#0D47A1] text-lg font-medium">20+</span> Yrs
       </p>
-      <button className="h-[35px] w-[150px] text-sm text-white bg-green-800 border-0 border-black rounded-full flex justify-center items-center hover:scale-105 hover:text-md hover:text-rose-50 transition-all ease-in-out duration-200 cursor-pointer">
+      <button className="h-[35px] w-[150px] text-sm text-white bg-green-800 border-0 border-black rounded-full flex justify-center items-center hover:scale-105 hover:text-md hover:text-rose-50 transition-all ease-in-out duration-200 cursor-not-allowed opacity-50">
         Profile
       </button>
     </div>
@@ -113,10 +125,10 @@ export default function About() {
   {/* Card 3 */}
   <div className="h-auto w-full sm:w-[400px] border-0 border-black grid place-items-center gap-4">
     <div className="h-[280px] w-[280px] sm:h-[380px] sm:w-[380px] border-0 border-black rounded-full overflow-hidden">
-      <Image src={aboutImg} alt="Image" className="h-full w-full border-2 border-[#0D47A1] rounded-full object-cover" />
+      <Image src={orthoImg} alt="Image" className="h-full w-full border-2 border-[#0D47A1] rounded-full hover:scale-110 hover:border-red-400 transition-all ease-in-out duration-200" />
     </div>
     <div className="h-auto w-full sm:w-[380px] border-0 border-black grid place-content-center gap-2">
-      <p className="text-base md:text-lg text-[#0D47A1] font-medium tracking-wide">Dr Shruti Mishra</p>
+      <p className="text-base md:text-lg text-[#0D47A1] font-medium tracking-wide">Dr Kalyani Kumari</p>
       <p className="text-sm md:text-base text-[#0097A7] tracking-widest">MBBS (Cardiologist Specialist)</p>
       <p>
         <FontAwesomeIcon icon={faStar} className="text-sm sm:text-base md:text-lg text-[#FFD700]" />
@@ -126,9 +138,9 @@ export default function About() {
         <FontAwesomeIcon icon={faStar} className="text-sm sm:text-base md:text-lg text-[#FFD700]" />
       </p>
       <p className="text-[#37474F]">
-        Serving Patients <span className="text-[#0D47A1] text-lg font-medium">10+</span> Yrs
+        Serving Patients <span className="text-[#0D47A1] text-lg font-medium">13+</span> Yrs
       </p>
-      <button className="h-[35px] w-[150px] text-sm text-white bg-green-800 border-0 border-black rounded-full flex justify-center items-center hover:scale-105 hover:text-md hover:text-rose-50 transition-all ease-in-out duration-200 cursor-pointer">
+      <button className="h-[35px] w-[150px] text-sm text-white bg-green-800 border-0 border-black rounded-full flex justify-center items-center hover:scale-105 hover:text-md hover:text-rose-50 transition-all ease-in-out duration-200 cursor-not-allowed opacity-50">
         Profile
       </button>
     </div>
@@ -142,12 +154,12 @@ export default function About() {
   <div className="h-auto w-full sm:w-[400px] border-0 border-black grid place-items-center gap-4">
     {/* adding doc profile */}
     <div className="h-[280px] w-[280px] sm:h-[380px] sm:w-[380px] border-0 border-black rounded-full overflow-hidden">
-      <Image src={aboutImg} alt="Image" className="h-full w-full border-2 border-[#0D47A1] rounded-full object-cover" />
+      <Image src={docOne} alt="Image" className="h-full w-full border-2 border-[#0D47A1] rounded-full hover:scale-110 hover:border-red-400 transition-all ease-in-out duration-200" />
     </div>
     {/* adding review rating */}
     <div className="h-auto w-full sm:w-[380px] border-0 border-black grid place-content-center gap-2">
-      <p className="text-base md:text-lg text-[#0D47A1] font-medium tracking-wide">Dr Shruti Mishra</p>
-      <p className="text-sm md:text-base text-[#0097A7] tracking-widest">MBBS (Cardiologist Specialist)</p>
+      <p className="text-base md:text-lg text-[#0D47A1] font-medium tracking-wide">Dr Arjun Mehra</p>
+      <p className="text-sm md:text-base text-[#0097A7] tracking-widest">MBBS (Dermatologist Specialist)</p>
       <p>
         <FontAwesomeIcon icon={faStar} className="text-sm sm:text-base md:text-lg text-[#FFD700]" />
         <FontAwesomeIcon icon={faStar} className="text-sm sm:text-base md:text-lg text-[#FFD700]" />
@@ -156,10 +168,10 @@ export default function About() {
         <FontAwesomeIcon icon={faStar} className="text-sm sm:text-base md:text-lg text-[#FFD700]" />
       </p>
       <p className="text-[#37474F]">
-        Serving Patients <span className="text-[#0D47A1] text-lg font-medium">10+</span> Yrs
+        Serving Patients <span className="text-[#0D47A1] text-lg font-medium">12+</span> Yrs
       </p>
       {/* adding button */}
-      <button className="h-[35px] w-[150px] text-sm text-white bg-green-800 border-0 border-black rounded-full flex justify-center items-center hover:scale-105 hover:text-md hover:text-rose-50 transition-all ease-in-out duration-200 cursor-pointer">
+      <button className="h-[35px] w-[150px] text-sm text-white bg-green-800 border-0 border-black rounded-full flex justify-center items-center hover:scale-105 hover:text-md hover:text-rose-50 transition-all ease-in-out duration-200 cursor-not-allowed opacity-50">
         Profile
       </button>
     </div>
@@ -168,11 +180,11 @@ export default function About() {
   {/* Card 2 */}
   <div className="h-auto w-full sm:w-[400px] border-0 border-black grid place-items-center gap-4">
     <div className="h-[280px] w-[280px] sm:h-[380px] sm:w-[380px] border-0 border-black rounded-full overflow-hidden">
-      <Image src={aboutImg} alt="Image" className="h-full w-full border-2 border-[#0D47A1] rounded-full object-cover" />
+      <Image src={docTwo} alt="Image" className="h-full w-full border-2 border-[#0D47A1] rounded-full hover:scale-110 hover:border-red-400 transition-all ease-in-out duration-200" />
     </div>
     <div className="h-auto w-full sm:w-[380px] border-0 border-black grid place-content-center gap-2">
-      <p className="text-base md:text-lg text-[#0D47A1] font-medium tracking-wide">Dr Shruti Mishra</p>
-      <p className="text-sm md:text-base text-[#0097A7] tracking-widest">MBBS (Cardiologist Specialist)</p>
+      <p className="text-base md:text-lg text-[#0D47A1] font-medium tracking-wide">Dr Raghav Malhotra</p>
+      <p className="text-sm md:text-base text-[#0097A7] tracking-widest">MBBS (Gastroenterologist Specialist)</p>
       <p>
         <FontAwesomeIcon icon={faStar} className="text-sm sm:text-base md:text-lg text-[#FFD700]" />
         <FontAwesomeIcon icon={faStar} className="text-sm sm:text-base md:text-lg text-[#FFD700]" />
@@ -183,7 +195,7 @@ export default function About() {
       <p className="text-[#37474F]">
         Serving Patients <span className="text-[#0D47A1] text-lg font-medium">10+</span> Yrs
       </p>
-      <button className="h-[35px] w-[150px] text-sm text-white bg-green-800 border-0 border-black rounded-full flex justify-center items-center hover:scale-105 hover:text-md hover:text-rose-50 transition-all ease-in-out duration-200 cursor-pointer">
+      <button className="h-[35px] w-[150px] text-sm text-white bg-green-800 border-0 border-black rounded-full flex justify-center items-center hover:scale-105 hover:text-md hover:text-rose-50 transition-all ease-in-out duration-200 cursor-not-allowed opacity-50">
         Profile
       </button>
     </div>
@@ -192,11 +204,11 @@ export default function About() {
   {/* Card 3 */}
   <div className="h-auto w-full sm:w-[400px] border-0 border-black grid place-items-center gap-4">
     <div className="h-[280px] w-[280px] sm:h-[380px] sm:w-[380px] border-0 border-black rounded-full overflow-hidden">
-      <Image src={aboutImg} alt="Image" className="h-full w-full border-2 border-[#0D47A1] rounded-full object-cover" />
+      <Image src={docThree} alt="Image" className="h-full w-full border-2 border-[#0D47A1] rounded-full hover:scale-110 hover:border-red-400 transition-all ease-in-out duration-200" />
     </div>
     <div className="h-auto w-full sm:w-[380px] border-0 border-black grid place-content-center gap-2">
-      <p className="text-base md:text-lg text-[#0D47A1] font-medium tracking-wide">Dr Shruti Mishra</p>
-      <p className="text-sm md:text-base text-[#0097A7] tracking-widest">MBBS (Cardiologist Specialist)</p>
+      <p className="text-base md:text-lg text-[#0D47A1] font-medium tracking-wide">Dr Karan Iyer</p>
+      <p className="text-sm md:text-base text-[#0097A7] tracking-widest">MBBS (Pulmonologist Specialist)</p>
       <p>
         <FontAwesomeIcon icon={faStar} className="text-sm sm:text-base md:text-lg text-[#FFD700]" />
         <FontAwesomeIcon icon={faStar} className="text-sm sm:text-base md:text-lg text-[#FFD700]" />
@@ -207,7 +219,7 @@ export default function About() {
       <p className="text-[#37474F]">
         Serving Patients <span className="text-[#0D47A1] text-lg font-medium">10+</span> Yrs
       </p>
-      <button className="h-[35px] w-[150px] text-sm text-white bg-green-800 border-0 border-black rounded-full flex justify-center items-center hover:scale-105 hover:text-md hover:text-rose-50 transition-all ease-in-out duration-200 cursor-pointer">
+      <button className="h-[35px] w-[150px] text-sm text-white bg-green-800 border-0 border-black rounded-full flex justify-center items-center hover:scale-105 hover:text-md hover:text-rose-50 transition-all ease-in-out duration-200 cursor-not-allowed opacity-50">
         Profile
       </button>
     </div>
@@ -220,12 +232,12 @@ export default function About() {
   <div className="h-auto w-full sm:w-[400px] border-0 border-black grid place-items-center gap-4">
     {/* adding doc profile */}
     <div className="h-[280px] w-[280px] sm:h-[380px] sm:w-[380px] border-0 border-black rounded-full overflow-hidden">
-      <Image src={aboutImg} alt="Image" className="h-full w-full border-2 border-[#0D47A1] rounded-full object-cover" />
+      <Image src={docFour} alt="Image" className="h-full w-full border-2 border-[#0D47A1] rounded-full hover:scale-110 hover:border-red-400 transition-all ease-in-out duration-200" />
     </div>
     {/* adding review rating */}
     <div className="h-auto w-full sm:w-[380px] border-0 border-black grid place-content-center gap-2">
-      <p className="text-base md:text-lg text-[#0D47A1] font-medium tracking-wide">Dr Shruti Mishra</p>
-      <p className="text-sm md:text-base text-[#0097A7] tracking-widest">MBBS (Cardiologist Specialist)</p>
+      <p className="text-base md:text-lg text-[#0D47A1] font-medium tracking-wide">Dr Ananya Sharma</p>
+      <p className="text-sm md:text-base text-[#0097A7] tracking-widest">MBBS (Pediatrician Specialist)</p>
       <p>
         <FontAwesomeIcon icon={faStar} className="text-sm sm:text-base md:text-lg text-[#FFD700]" />
         <FontAwesomeIcon icon={faStar} className="text-sm sm:text-base md:text-lg text-[#FFD700]" />
@@ -234,10 +246,10 @@ export default function About() {
         <FontAwesomeIcon icon={faStar} className="text-sm sm:text-base md:text-lg text-[#FFD700]" />
       </p>
       <p className="text-[#37474F]">
-        Serving Patients <span className="text-[#0D47A1] text-lg font-medium">10+</span> Yrs
+        Serving Patients <span className="text-[#0D47A1] text-lg font-medium">11+</span> Yrs
       </p>
       {/* adding button */}
-      <button className="h-[35px] w-[150px] text-sm text-white bg-green-800 border-0 border-black rounded-full flex justify-center items-center hover:scale-105 hover:text-md hover:text-rose-50 transition-all ease-in-out duration-200 cursor-pointer">
+      <button className="h-[35px] w-[150px] text-sm text-white bg-green-800 border-0 border-black rounded-full flex justify-center items-center hover:scale-105 hover:text-md hover:text-rose-50 transition-all ease-in-out duration-200 cursor-not-allowed opacity-50">
         Profile
       </button>
     </div>
@@ -246,11 +258,11 @@ export default function About() {
   {/* Card 2 */}
   <div className="h-auto w-full sm:w-[400px] border-0 border-black grid place-items-center gap-4">
     <div className="h-[280px] w-[280px] sm:h-[380px] sm:w-[380px] border-0 border-black rounded-full overflow-hidden">
-      <Image src={aboutImg} alt="Image" className="h-full w-full border-2 border-[#0D47A1] rounded-full object-cover" />
+      <Image src={docFive} alt="Image" className="h-full w-full border-2 border-[#0D47A1] rounded-full hover:scale-110 hover:border-red-400 transition-all ease-in-out duration-200" />
     </div>
     <div className="h-auto w-full sm:w-[380px] border-0 border-black grid place-content-center gap-2">
-      <p className="text-base md:text-lg text-[#0D47A1] font-medium tracking-wide">Dr Shruti Mishra</p>
-      <p className="text-sm md:text-base text-[#0097A7] tracking-widest">MBBS (Cardiologist Specialist)</p>
+      <p className="text-base md:text-lg text-[#0D47A1] font-medium tracking-wide">Dr Meera Nair</p>
+      <p className="text-sm md:text-base text-[#0097A7] tracking-widest">MBBS (Gynecologist Specialist)</p>
       <p>
         <FontAwesomeIcon icon={faStar} className="text-sm sm:text-base md:text-lg text-[#FFD700]" />
         <FontAwesomeIcon icon={faStar} className="text-sm sm:text-base md:text-lg text-[#FFD700]" />
@@ -259,9 +271,9 @@ export default function About() {
         <FontAwesomeIcon icon={faStar} className="text-sm sm:text-base md:text-lg text-[#FFD700]" />
       </p>
       <p className="text-[#37474F]">
-        Serving Patients <span className="text-[#0D47A1] text-lg font-medium">10+</span> Yrs
+        Serving Patients <span className="text-[#0D47A1] text-lg font-medium">12+</span> Yrs
       </p>
-      <button className="h-[35px] w-[150px] text-sm text-white bg-green-800 border-0 border-black rounded-full flex justify-center items-center hover:scale-105 hover:text-md hover:text-rose-50 transition-all ease-in-out duration-200 cursor-pointer">
+      <button className="h-[35px] w-[150px] text-sm text-white bg-green-800 border-0 border-black rounded-full flex justify-center items-center hover:scale-105 hover:text-md hover:text-rose-50 transition-all ease-in-out duration-200 cursor-not-allowed opacity-50">
         Profile
       </button>
     </div>
@@ -270,11 +282,11 @@ export default function About() {
   {/* Card 3 */}
   <div className="h-auto w-full sm:w-[400px] border-0 border-black grid place-items-center gap-4">
     <div className="h-[280px] w-[280px] sm:h-[380px] sm:w-[380px] border-0 border-black rounded-full overflow-hidden">
-      <Image src={aboutImg} alt="Image" className="h-full w-full border-2 border-[#0D47A1] rounded-full object-cover" />
+      <Image src={docSix} alt="Image" className="h-full w-full border-2 border-[#0D47A1] rounded-full hover:scale-110 hover:border-red-400 transition-all ease-in-out duration-200" />
     </div>
     <div className="h-auto w-full sm:w-[380px] border-0 border-black grid place-content-center gap-2">
-      <p className="text-base md:text-lg text-[#0D47A1] font-medium tracking-wide">Dr Shruti Mishra</p>
-      <p className="text-sm md:text-base text-[#0097A7] tracking-widest">MBBS (Cardiologist Specialist)</p>
+      <p className="text-base md:text-lg text-[#0D47A1] font-medium tracking-wide">Dr Priya Deshmukh</p>
+      <p className="text-sm md:text-base text-[#0097A7] tracking-widest">MBBS (Ophthalmologist Specialist)</p>
       <p>
         <FontAwesomeIcon icon={faStar} className="text-sm sm:text-base md:text-lg text-[#FFD700]" />
         <FontAwesomeIcon icon={faStar} className="text-sm sm:text-base md:text-lg text-[#FFD700]" />
@@ -283,9 +295,9 @@ export default function About() {
         <FontAwesomeIcon icon={faStar} className="text-sm sm:text-base md:text-lg text-[#FFD700]" />
       </p>
       <p className="text-[#37474F]">
-        Serving Patients <span className="text-[#0D47A1] text-lg font-medium">10+</span> Yrs
+        Serving Patients <span className="text-[#0D47A1] text-lg font-medium">13+</span> Yrs
       </p>
-      <button className="h-[35px] w-[150px] text-sm text-white bg-green-800 border-0 border-black rounded-full flex justify-center items-center hover:scale-105 hover:text-md hover:text-rose-50 transition-all ease-in-out duration-200 cursor-pointer">
+      <button className="h-[35px] w-[150px] text-sm text-white bg-green-800 border-0 border-black rounded-full flex justify-center items-center hover:scale-105 hover:text-md hover:text-rose-50 transition-all ease-in-out duration-200 cursor-not-allowed opacity-50">
         Profile
       </button>
     </div>
@@ -298,12 +310,12 @@ export default function About() {
      <div className="h-auto w-full sm:w-[400px] border-0 border-black grid place-items-center gap-4">
     {/* adding doc profile */}
     <div className="h-[280px] w-[280px] sm:h-[380px] sm:w-[380px] border-0 border-black rounded-full overflow-hidden">
-      <Image src={aboutImg} alt="Image" className="h-full w-full border-2 border-[#0D47A1] rounded-full object-cover" />
+      <Image src={docSeven} alt="Image" className="h-full w-full border-2 border-[#0D47A1] rounded-full hover:scale-110 hover:border-red-400 transition-all ease-in-out duration-200" />
     </div>
     {/* adding review rating */}
     <div className="h-auto w-full sm:w-[380px] border-0 border-black grid place-content-center gap-2">
-      <p className="text-base md:text-lg text-[#0D47A1] font-medium tracking-wide">Dr Shruti Mishra</p>
-      <p className="text-sm md:text-base text-[#0097A7] tracking-widest">MBBS (Cardiologist Specialist)</p>
+      <p className="text-base md:text-lg text-[#0D47A1] font-medium tracking-wide">Dr Devansh Kapoor</p>
+      <p className="text-sm md:text-base text-[#0097A7] tracking-widest">MBBS (Endocrinologist Specialist)</p>
       <p>
         <FontAwesomeIcon icon={faStar} className="text-sm sm:text-base md:text-lg text-[#FFD700]" />
         <FontAwesomeIcon icon={faStar} className="text-sm sm:text-base md:text-lg text-[#FFD700]" />
@@ -312,10 +324,10 @@ export default function About() {
         <FontAwesomeIcon icon={faStar} className="text-sm sm:text-base md:text-lg text-[#FFD700]" />
       </p>
       <p className="text-[#37474F]">
-        Serving Patients <span className="text-[#0D47A1] text-lg font-medium">10+</span> Yrs
+        Serving Patients <span className="text-[#0D47A1] text-lg font-medium">14+</span> Yrs
       </p>
       {/* adding button */}
-      <button className="h-[35px] w-[150px] text-sm text-white bg-green-800 border-0 border-black rounded-full flex justify-center items-center hover:scale-105 hover:text-md hover:text-rose-50 transition-all ease-in-out duration-200 cursor-pointer">
+      <button className="h-[35px] w-[150px] text-sm text-white bg-green-800 border-0 border-black rounded-full flex justify-center items-center hover:scale-105 hover:text-md hover:text-rose-50 transition-all ease-in-out duration-200 cursor-not-allowed opacity-50">
         Profile
       </button>
     </div>
@@ -324,11 +336,11 @@ export default function About() {
   {/* Card 2 */}
   <div className="h-auto w-full sm:w-[400px] border-0 border-black grid place-items-center gap-4">
     <div className="h-[280px] w-[280px] sm:h-[380px] sm:w-[380px] border-0 border-black rounded-full overflow-hidden">
-      <Image src={aboutImg} alt="Image" className="h-full w-full border-2 border-[#0D47A1] rounded-full object-cover" />
+      <Image src={docEight} alt="Image" className="h-full w-full border-2 border-[#0D47A1] rounded-full hover:scale-110 hover:border-red-400 transition-all ease-in-out duration-200r" />
     </div>
     <div className="h-auto w-full sm:w-[380px] border-0 border-black grid place-content-center gap-2">
-      <p className="text-base md:text-lg text-[#0D47A1] font-medium tracking-wide">Dr Shruti Mishra</p>
-      <p className="text-sm md:text-base text-[#0097A7] tracking-widest">MBBS (Cardiologist Specialist)</p>
+      <p className="text-base md:text-lg text-[#0D47A1] font-medium tracking-wide">Dr Vikram Sinha</p>
+      <p className="text-sm md:text-base text-[#0097A7] tracking-widest">MBBS (General Physician Specialist)</p>
       <p>
         <FontAwesomeIcon icon={faStar} className="text-sm sm:text-base md:text-lg text-[#FFD700]" />
         <FontAwesomeIcon icon={faStar} className="text-sm sm:text-base md:text-lg text-[#FFD700]" />
@@ -337,9 +349,9 @@ export default function About() {
         <FontAwesomeIcon icon={faStar} className="text-sm sm:text-base md:text-lg text-[#FFD700]" />
       </p>
       <p className="text-[#37474F]">
-        Serving Patients <span className="text-[#0D47A1] text-lg font-medium">10+</span> Yrs
+        Serving Patients <span className="text-[#0D47A1] text-lg font-medium">15+</span> Yrs
       </p>
-      <button className="h-[35px] w-[150px] text-sm text-white bg-green-800 border-0 border-black rounded-full flex justify-center items-center hover:scale-105 hover:text-md hover:text-rose-50 transition-all ease-in-out duration-200 cursor-pointer">
+      <button className="h-[35px] w-[150px] text-sm text-white bg-green-800 border-0 border-black rounded-full flex justify-center items-center hover:scale-105 hover:text-md hover:text-rose-50 transition-all ease-in-out duration-200 cursor-not-allowed opacity-50">
         Profile
       </button>
     </div>
@@ -348,11 +360,11 @@ export default function About() {
   {/* Card 3 */}
   <div className="h-auto w-full sm:w-[400px] border-0 border-black grid place-items-center gap-4">
     <div className="h-[280px] w-[280px] sm:h-[380px] sm:w-[380px] border-0 border-black rounded-full overflow-hidden">
-      <Image src={aboutImg} alt="Image" className="h-full w-full border-2 border-[#0D47A1] rounded-full object-cover" />
+      <Image src={docNine} alt="Image" className="h-full w-full border-2 border-[#0D47A1] rounded-full hover:scale-110 hover:border-red-400 transition-all ease-in-out duration-200" />
     </div>
     <div className="h-auto w-full sm:w-[380px] border-0 border-black grid place-content-center gap-2">
-      <p className="text-base md:text-lg text-[#0D47A1] font-medium tracking-wide">Dr Shruti Mishra</p>
-      <p className="text-sm md:text-base text-[#0097A7] tracking-widest">MBBS (Cardiologist Specialist)</p>
+      <p className="text-base md:text-lg text-[#0D47A1] font-medium tracking-wide">Dr Kavya Reddy</p>
+      <p className="text-sm md:text-base text-[#0097A7] tracking-widest">MBBS (Nephrologist Specialist)</p>
       <p>
         <FontAwesomeIcon icon={faStar} className="text-sm sm:text-base md:text-lg text-[#FFD700]" />
         <FontAwesomeIcon icon={faStar} className="text-sm sm:text-base md:text-lg text-[#FFD700]" />
@@ -361,9 +373,9 @@ export default function About() {
         <FontAwesomeIcon icon={faStar} className="text-sm sm:text-base md:text-lg text-[#FFD700]" />
       </p>
       <p className="text-[#37474F]">
-        Serving Patients <span className="text-[#0D47A1] text-lg font-medium">10+</span> Yrs
+        Serving Patients <span className="text-[#0D47A1] text-lg font-medium">14+</span> Yrs
       </p>
-      <button className="h-[35px] w-[150px] text-sm text-white bg-green-800 border-0 border-black rounded-full flex justify-center items-center hover:scale-105 hover:text-md hover:text-rose-50 transition-all ease-in-out duration-200 cursor-pointer">
+      <button className="h-[35px] w-[150px] text-sm text-white bg-green-800 border-0 border-black rounded-full flex justify-center items-center hover:scale-105 hover:text-md hover:text-rose-50 transition-all ease-in-out duration-200 cursor-not-allowed opacity-50">
         Profile
       </button>
     </div>
