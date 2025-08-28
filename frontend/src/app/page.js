@@ -370,6 +370,16 @@ export default function Home() {
   </div>
 </div>
 
+
+{/* adding emergency sec */}
+  <div className="h-[100px] w-full bg-white grid place-content-center select-none">
+       <div className="w-full flex justify-center items-center">
+        <p className="text-lg font-medium text-[#0A3D62] tracking-wide">In Case Of Emergency Dial : <span className="text-[20px] text-red-400">108</span> Or <span className="text-[20px] text-red-400">112</span></p>
+       </div>
+       <div className="w-full flex justify-center items-center">
+        <p className="text-lg font-medium text-[#0A3D62] tracking-wide">Available <span className="text-[20px] text-red-400">24</span>/<span className="text-[20px] text-red-400">7</span></p>
+       </div>
+  </div>
     </>
     )
 }
