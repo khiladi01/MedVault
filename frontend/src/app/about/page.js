@@ -105,7 +105,7 @@ export default function About() {
     </div>
     <div className="h-auto w-full sm:w-[380px] border-0 border-black grid place-content-center gap-2">
       <p className="text-base md:text-lg text-[#0D47A1] font-medium tracking-wide">Dr Nikhil Joshi</p>
-      <p className="text-sm md:text-base text-[#0097A7] tracking-widest">MBBS (Cardiologist Specialist)</p>
+      <p className="text-sm md:text-base text-[#0097A7] tracking-widest">MBBS (Neurologist Specialist)</p>
       <p>
         <FontAwesomeIcon icon={faStar} className="text-sm sm:text-base md:text-lg text-[#FFD700]" />
         <FontAwesomeIcon icon={faStar} className="text-sm sm:text-base md:text-lg text-[#FFD700]" />
@@ -129,7 +129,7 @@ export default function About() {
     </div>
     <div className="h-auto w-full sm:w-[380px] border-0 border-black grid place-content-center gap-2">
       <p className="text-base md:text-lg text-[#0D47A1] font-medium tracking-wide">Dr Kalyani Kumari</p>
-      <p className="text-sm md:text-base text-[#0097A7] tracking-widest">MBBS (Cardiologist Specialist)</p>
+      <p className="text-sm md:text-base text-[#0097A7] tracking-widest">MBBS (Orthopedics Specialist)</p>
       <p>
         <FontAwesomeIcon icon={faStar} className="text-sm sm:text-base md:text-lg text-[#FFD700]" />
         <FontAwesomeIcon icon={faStar} className="text-sm sm:text-base md:text-lg text-[#FFD700]" />
