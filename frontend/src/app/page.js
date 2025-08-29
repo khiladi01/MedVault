@@ -1,6 +1,6 @@
 "use client"
 import React, { useState, useRef, useEffect } from "react"
-import CountUp from 'react-countup';
+// import CountUp from 'react-countup';
 import Link from "next/link"
 import Image from "next/image"
 import aboutImg from "./assets/aboutimg (1).jpg"
@@ -81,7 +81,6 @@ export default function Home() {
   </div>
 </div>
 
-
     {/* adding about us section */}
     <div className="min-h-screen w-full bg-white flex flex-col lg:flex-row justify-center items-center gap-10 select-none px-4 sm:px-6 lg:px-12 py-10">
   {/* phase-1 image */}
@@ -89,6 +88,8 @@ export default function Home() {
     <Image 
     src={aboutImg} 
     alt="contact image" 
+    width={580}
+    height={400}
     className="w-full max-w-[580px] h-auto border-0 border-slate-500" />
   </div>
 
@@ -165,7 +166,9 @@ export default function Home() {
     <Image
       src={appointImg}
       alt="about image"
-      className="h-[260px] w-[260px] sm:h-[380px] sm:w-[380px] md:h-[480px] md:w-[480px] lg:h-[580px] lg:w-[580px] border-0 border-slate-500"
+      width={580}
+      height={580}
+      className="sm:h-[380px] sm:w-[380px] md:h-[480px] md:w-[480px] lg:h-[580px] lg:w-[580px] border-0 border-slate-500"
     />
   </div>
 
@@ -225,28 +228,28 @@ export default function Home() {
         
         <div>
           <h2 className="text-3xl md:text-4xl font-bold text-teal-600">
-            <CountUp end={10000} duration={5} start={isTrustSectionVisible ? undefined : 0} />+
+            {isTrustSectionVisible ? "10000+" : "0+"}
           </h2>
           <p className="text-gray-600">Patients Served</p>
         </div>
 
         <div>
           <h2 className="text-3xl md:text-4xl font-bold text-teal-600">
-            <CountUp end={500} duration={5} start={isTrustSectionVisible ? undefined : 0} />+
+            {isTrustSectionVisible ? "500+" : "0+"}
           </h2>
           <p className="text-gray-600">Doctors Onboard</p>
         </div>
 
         <div>
           <h2 className="text-3xl md:text-4xl font-bold text-teal-600">
-            <CountUp end={99} duration={5} start={isTrustSectionVisible ? undefined : 0} />%
+            {isTrustSectionVisible ? "99%" : "0%"}
           </h2>
           <p className="text-gray-600">Data Security</p>
         </div>
 
         <div>
           <h2 className="text-3xl md:text-4xl font-bold text-teal-600">
-            <CountUp end={24} duration={5} start={isTrustSectionVisible ? undefined : 0} />/7
+            {isTrustSectionVisible ? "24/7" : "0/7"}
           </h2>
           <p className="text-gray-600">Support</p>
         </div>
@@ -276,7 +279,7 @@ export default function Home() {
     <div className="h-auto md:h-[600px] w-full md:w-[450px] border-0 border-black grid place-content-center gap-5">
       {/* phase one of box */}
       <div className="h-[280px] sm:h-[320px] md:h-[360px] w-full max-w-[420px] border-0 border-rose-500 flex justify-center items-center mx-auto">
-        <Image src={cardioImg} alt="Image" className="h-full w-[260px] sm:w-[300px] md:w-[360px] rounded-full border-[2px] border-[#0D47A1] hover:scale-110 hover:border-red-400 transition-all ease-in-out duration-500" />
+        <Image src={cardioImg} alt="Image" width={360} height={360} className="h-full w-[260px] sm:w-[300px] md:w-[360px] rounded-full border-[2px] border-[#0D47A1] hover:scale-110 hover:border-red-400 transition-all ease-in-out duration-500" />
       </div>
 
       {/* phase three of box */}
@@ -297,7 +300,7 @@ export default function Home() {
     {/* phase two image-2 */}
     <div className="h-auto md:h-[600px] w-full md:w-[450px] border-0 border-black grid place-content-center gap-5">
       <div className="h-[280px] sm:h-[320px] md:h-[360px] w-full max-w-[420px] border-0 border-rose-500 flex justify-center items-center mx-auto">
-        <Image src={neuroImg} alt="Image" className="h-full w-[260px] sm:w-[300px] md:w-[360px] rounded-full border-[2px] border-[#0D47A1] hover:scale-110 hover:border-red-400 transition-all ease-in-out duration-500" />
+        <Image src={neuroImg} alt="Image" width={360} height={360} className="h-full w-[260px] sm:w-[300px] md:w-[360px] rounded-full border-[2px] border-[#0D47A1] hover:scale-110 hover:border-red-400 transition-all ease-in-out duration-500" />
       </div>
       <div className="h-auto md:h-[180px] w-full max-w-[420px] border-0 border-rose-500 grid place-content-center gap-2 text-center mx-auto">
         <p className="text-base md:text-lg text-[#0D47A1] font-medium tracking-wide">Dr Nikhil Joshi</p>
@@ -316,7 +319,7 @@ export default function Home() {
     {/* phase two image-3 */}
     <div className="h-auto md:h-[600px] w-full md:w-[450px] border-0 border-black grid place-content-center gap-5">
       <div className="h-[280px] sm:h-[320px] md:h-[360px] w-full max-w-[420px] border-0 border-rose-500 flex justify-center items-center mx-auto">
-        <Image src={orthoImg} alt="Image" className="h-full w-[260px] sm:w-[300px] md:w-[360px] rounded-full border-[2px] border-[#0D47A1] hover:scale-110 hover:border-red-400 transition-all ease-in-out duration-500" />
+        <Image src={orthoImg} alt="Image" width={360} height={360} className="h-full w-[260px] sm:w-[300px] md:w-[360px] rounded-full border-[2px] border-[#0D47A1] hover:scale-110 hover:border-red-400 transition-all ease-in-out duration-500" />
       </div>
       <div className="h-auto md:h-[180px] w-full max-w-[420px] border-0 border-rose-500 grid place-content-center gap-2 text-center mx-auto">
         <p className="text-base md:text-lg text-[#0D47A1] font-medium tracking-wide">Dr Kalyani Kumari</p>
@@ -337,7 +340,7 @@ export default function Home() {
 
 
     {/* adding contact us section */}
-    <div className="min-h-screen w-full bg-white flex flex-col lg:flex-row justify-center items-center gap-10 selection:bg-rose-300 px-4">
+    <div className="min-h-screen w-full bg-white flex flex-col lg:flex-row justify-center items-center gap-10 selection:bg-rose-300 px-4 select-none">
     
   {/* pahse-1 about us sec */}
   <div className="w-full max-w-[700px]">
@@ -366,7 +369,7 @@ export default function Home() {
 
   {/* pahse-2 image */}
   <div id="box" className="w-full max-w-[600px] h-auto flex justify-center items-center">
-    <Image src={contactImg} alt="contact image" className="w-full max-w-[580px] h-auto border-0 border-slate-500" />
+    <Image src={contactImg} alt="contact image" width={580} height={400} className="w-full max-w-[580px] h-auto border-0 border-slate-500" />
   </div>
 </div>
 

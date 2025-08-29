@@ -46,6 +46,8 @@ export default function BookPage(){
     <Image
       src={appointImg}
       alt="about image"
+      width={580}
+      height={580}
       className="h-[260px] w-[260px] sm:h-[380px] sm:w-[380px] md:h-[480px] md:w-[480px] lg:h-[580px] lg:w-[580px] border-0 border-slate-500"
     />
   </div>

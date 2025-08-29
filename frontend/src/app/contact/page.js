@@ -69,7 +69,7 @@ export default function Contact() {
 
   {/* pahse-2 image */}
   <div id="box" className="w-full max-w-[600px] h-auto flex justify-center items-center">
-    <Image src={contactImg} alt="contact image" className="w-full max-w-[580px] h-auto border-0 border-slate-500" />
+    <Image src={contactImg} alt="contact image" width={580} height={400} className="w-full max-w-[580px] h-auto border-0 border-slate-500" />
   </div>
 </div>
 

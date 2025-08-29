@@ -38,6 +38,8 @@ export default function About() {
     <Image 
     src={aboutImg} 
     alt="contact image" 
+    width={580}
+    height={400}
     className="w-full max-w-[580px] h-auto border-0 border-slate-500" />
   </div>
 
@@ -75,7 +77,7 @@ export default function About() {
   <div className="h-auto w-full sm:w-[400px] border-0 border-black grid place-items-center gap-4">
     {/* adding doc profile */}
     <div className="h-[280px] w-[280px] sm:h-[380px] sm:w-[380px] border-0 border-black rounded-full overflow-hidden">
-      <Image src={cardioImg} alt="Image" className="h-full w-full border-2 border-[#0D47A1] rounded-full hover:scale-110 hover:border-red-400 transition-all ease-in-out duration-500" />
+      <Image src={cardioImg} alt="Image" width={380} height={380} className="h-full w-full border-2 border-[#0D47A1] rounded-full hover:scale-110 hover:border-red-400 transition-all ease-in-out duration-500" />
     </div>
     {/* adding review rating */}
     <div className="h-auto w-full sm:w-[380px] border-0 border-black grid place-content-center gap-2">
@@ -101,7 +103,7 @@ export default function About() {
   {/* Card 2 */}
   <div className="h-auto w-full sm:w-[400px] border-0 border-black grid place-items-center gap-4">
     <div className="h-[280px] w-[280px] sm:h-[380px] sm:w-[380px] border-0 border-black rounded-full overflow-hidden">
-      <Image src={neuroImg} alt="Image" className="h-full w-full border-2 border-[#0D47A1] rounded-full hover:scale-110 hover:border-red-400 transition-all ease-in-out duration-500" />
+      <Image src={neuroImg} alt="Image" width={380} height={380} className="h-full w-full border-2 border-[#0D47A1] rounded-full hover:scale-110 hover:border-red-400 transition-all ease-in-out duration-500" />
     </div>
     <div className="h-auto w-full sm:w-[380px] border-0 border-black grid place-content-center gap-2">
       <p className="text-base md:text-lg text-[#0D47A1] font-medium tracking-wide">Dr Nikhil Joshi</p>
@@ -125,7 +127,7 @@ export default function About() {
   {/* Card 3 */}
   <div className="h-auto w-full sm:w-[400px] border-0 border-black grid place-items-center gap-4">
     <div className="h-[280px] w-[280px] sm:h-[380px] sm:w-[380px] border-0 border-black rounded-full overflow-hidden">
-      <Image src={orthoImg} alt="Image" className="h-full w-full border-2 border-[#0D47A1] rounded-full hover:scale-110 hover:border-red-400 transition-all ease-in-out duration-500" />
+      <Image src={orthoImg} alt="Image" width={380} height={380} className="h-full w-full border-2 border-[#0D47A1] rounded-full hover:scale-110 hover:border-red-400 transition-all ease-in-out duration-500" />
     </div>
     <div className="h-auto w-full sm:w-[380px] border-0 border-black grid place-content-center gap-2">
       <p className="text-base md:text-lg text-[#0D47A1] font-medium tracking-wide">Dr Kalyani Kumari</p>
@@ -154,7 +156,7 @@ export default function About() {
   <div className="h-auto w-full sm:w-[400px] border-0 border-black grid place-items-center gap-4">
     {/* adding doc profile */}
     <div className="h-[280px] w-[280px] sm:h-[380px] sm:w-[380px] border-0 border-black rounded-full overflow-hidden">
-      <Image src={docOne} alt="Image" className="h-full w-full border-2 border-[#0D47A1] rounded-full hover:scale-110 hover:border-red-400 transition-all ease-in-out duration-500" />
+      <Image src={docOne} alt="Image" width={380} height={380} className="h-full w-full border-2 border-[#0D47A1] rounded-full hover:scale-110 hover:border-red-400 transition-all ease-in-out duration-500" />
     </div>
     {/* adding review rating */}
     <div className="h-auto w-full sm:w-[380px] border-0 border-black grid place-content-center gap-2">
@@ -180,7 +182,7 @@ export default function About() {
   {/* Card 2 */}
   <div className="h-auto w-full sm:w-[400px] border-0 border-black grid place-items-center gap-4">
     <div className="h-[280px] w-[280px] sm:h-[380px] sm:w-[380px] border-0 border-black rounded-full overflow-hidden">
-      <Image src={docTwo} alt="Image" className="h-full w-full border-2 border-[#0D47A1] rounded-full hover:scale-110 hover:border-red-400 transition-all ease-in-out duration-500" />
+      <Image src={docTwo} alt="Image" width={380} height={380} className="h-full w-full border-2 border-[#0D47A1] rounded-full hover:scale-110 hover:border-red-400 transition-all ease-in-out duration-500" />
     </div>
     <div className="h-auto w-full sm:w-[380px] border-0 border-black grid place-content-center gap-2">
       <p className="text-base md:text-lg text-[#0D47A1] font-medium tracking-wide">Dr Raghav Malhotra</p>
@@ -204,7 +206,7 @@ export default function About() {
   {/* Card 3 */}
   <div className="h-auto w-full sm:w-[400px] border-0 border-black grid place-items-center gap-4">
     <div className="h-[280px] w-[280px] sm:h-[380px] sm:w-[380px] border-0 border-black rounded-full overflow-hidden">
-      <Image src={docThree} alt="Image" className="h-full w-full border-2 border-[#0D47A1] rounded-full hover:scale-110 hover:border-red-400 transition-all ease-in-out duration-500" />
+      <Image src={docThree} alt="Image" width={380} height={380} className="h-full w-full border-2 border-[#0D47A1] rounded-full hover:scale-110 hover:border-red-400 transition-all ease-in-out duration-500" />
     </div>
     <div className="h-auto w-full sm:w-[380px] border-0 border-black grid place-content-center gap-2">
       <p className="text-base md:text-lg text-[#0D47A1] font-medium tracking-wide">Dr Karan Iyer</p>
@@ -232,7 +234,7 @@ export default function About() {
   <div className="h-auto w-full sm:w-[400px] border-0 border-black grid place-items-center gap-4">
     {/* adding doc profile */}
     <div className="h-[280px] w-[280px] sm:h-[380px] sm:w-[380px] border-0 border-black rounded-full overflow-hidden">
-      <Image src={docFour} alt="Image" className="h-full w-full border-2 border-[#0D47A1] rounded-full hover:scale-110 hover:border-red-400 transition-all ease-in-out duration-500" />
+      <Image src={docFour} alt="Image" width={380} height={380} className="h-full w-full border-2 border-[#0D47A1] rounded-full hover:scale-110 hover:border-red-400 transition-all ease-in-out duration-500" />
     </div>
     {/* adding review rating */}
     <div className="h-auto w-full sm:w-[380px] border-0 border-black grid place-content-center gap-2">
@@ -282,7 +284,7 @@ export default function About() {
   {/* Card 3 */}
   <div className="h-auto w-full sm:w-[400px] border-0 border-black grid place-items-center gap-4">
     <div className="h-[280px] w-[280px] sm:h-[380px] sm:w-[380px] border-0 border-black rounded-full overflow-hidden">
-      <Image src={docSix} alt="Image" className="h-full w-full border-2 border-[#0D47A1] rounded-full hover:scale-110 hover:border-red-400 transition-all ease-in-out duration-500" />
+      <Image src={docSix} alt="Image" width={380} height={380} className="h-full w-full border-2 border-[#0D47A1] rounded-full hover:scale-110 hover:border-red-400 transition-all ease-in-out duration-500" />
     </div>
     <div className="h-auto w-full sm:w-[380px] border-0 border-black grid place-content-center gap-2">
       <p className="text-base md:text-lg text-[#0D47A1] font-medium tracking-wide">Dr Priya Deshmukh</p>
@@ -310,7 +312,7 @@ export default function About() {
      <div className="h-auto w-full sm:w-[400px] border-0 border-black grid place-items-center gap-4">
     {/* adding doc profile */}
     <div className="h-[280px] w-[280px] sm:h-[380px] sm:w-[380px] border-0 border-black rounded-full overflow-hidden">
-      <Image src={docSeven} alt="Image" className="h-full w-full border-2 border-[#0D47A1] rounded-full hover:scale-110 hover:border-red-400 transition-all ease-in-out duration-500" />
+      <Image src={docSeven} alt="Image" width={380} height={380} className="h-full w-full border-2 border-[#0D47A1] rounded-full hover:scale-110 hover:border-red-400 transition-all ease-in-out duration-500" />
     </div>
     {/* adding review rating */}
     <div className="h-auto w-full sm:w-[380px] border-0 border-black grid place-content-center gap-2">
@@ -336,7 +338,7 @@ export default function About() {
   {/* Card 2 */}
   <div className="h-auto w-full sm:w-[400px] border-0 border-black grid place-items-center gap-4">
     <div className="h-[280px] w-[280px] sm:h-[380px] sm:w-[380px] border-0 border-black rounded-full overflow-hidden">
-      <Image src={docEight} alt="Image" className="h-full w-full border-2 border-[#0D47A1] rounded-full hover:scale-110 hover:border-red-400 transition-all ease-in-out duration-500" />
+      <Image src={docEight} alt="Image" width={380} height={380} className="h-full w-full border-2 border-[#0D47A1] rounded-full hover:scale-110 hover:border-red-400 transition-all ease-in-out duration-500" />
     </div>
     <div className="h-auto w-full sm:w-[380px] border-0 border-black grid place-content-center gap-2">
       <p className="text-base md:text-lg text-[#0D47A1] font-medium tracking-wide">Dr Vikram Sinha</p>
@@ -360,7 +362,7 @@ export default function About() {
   {/* Card 3 */}
   <div className="h-auto w-full sm:w-[400px] border-0 border-black grid place-items-center gap-4">
     <div className="h-[280px] w-[280px] sm:h-[380px] sm:w-[380px] border-0 border-black rounded-full overflow-hidden">
-      <Image src={docNine} alt="Image" className="h-full w-full border-2 border-[#0D47A1] rounded-full hover:scale-110 hover:border-red-400 transition-all ease-in-out duration-500" />
+      <Image src={docNine} alt="Image" width={380} height={380} className="h-full w-full border-2 border-[#0D47A1] rounded-full hover:scale-110 hover:border-red-400 transition-all ease-in-out duration-500" />
     </div>
     <div className="h-auto w-full sm:w-[380px] border-0 border-black grid place-content-center gap-2">
       <p className="text-base md:text-lg text-[#0D47A1] font-medium tracking-wide">Dr Kavya Reddy</p>
