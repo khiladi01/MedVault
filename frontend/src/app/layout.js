@@ -22,7 +22,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "MedVault",
+  title: "MedVault-Health Care",
   description: "Medical site built with Next.js",
 };
 

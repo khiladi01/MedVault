@@ -9,7 +9,7 @@ import { faWhatsapp, faFacebook, faInstagram, faTwitter, faGithub } from "@forta
 export default function FooterBar() {
   return (
     <>
-      <div className="w-full bg-transparent flex flex-col md:flex-row justify-between items-center p-6 md:p-[25px] gap-8 md:gap-0 select-none">
+      <div className="w-full bg-[#000] flex flex-col md:flex-row justify-between items-center p-6 md:p-[25px] gap-8 md:gap-0 select-none">
         {/* first row */}
         <div className="w-full sm:w-[350px] grid gap-4">
           {/* logo */}
@@ -201,8 +201,11 @@ export default function FooterBar() {
         </div>
       </div>
 
+      {/* styling space */}
+      <div className="h-[0.1px] w-full bg-gradient-to-r from-cyan-400 via-indigo-500 to-red-500"></div>
+
       {/* end */}
-      <div className="h-[50px] w-full bg-slate-700 flex justify-center items-center p-[25px]">
+      <div className="h-[50px] w-full bg-[#0A3D62] flex justify-center items-center p-[25px]">
         <p className="text-gray-400 text-sm select-none">© {new Date().getFullYear()} MedVault</p>
       </div>
     </>

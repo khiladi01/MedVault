@@ -145,21 +145,30 @@ export default function Contact() {
   </div>
 
   {/* adding emergency sec */}
-<div className="h-auto w-full bg-white grid place-content-center select-none p-4">
-  <div className="w-full flex flex-col sm:flex-row justify-center items-center text-center gap-2">
-    <p className="text-lg font-medium text-[#0A3D62] tracking-wide">
-      In Case Of Emergency Dial :{" "}
-      <span className="text-[20px] text-red-400">108</span> Or{" "}
-      <span className="text-[20px] text-red-400">112</span>
+<div className="w-full bg-[#0A3D62] text-white py-4 px-6 rounded-xl shadow-md flex flex-col sm:flex-row items-center justify-center gap-4 select-none">
+  <div className="flex items-center gap-2">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className="h-6 w-6 text-red-400"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-1.405-1.405M19 13V7a2 2 0 00-2-2h-3V3H10v2H7a2 2 0 00-2 2v6l-2 2v1h16v-1l-2-2z" />
+    </svg>
+    <p className="text-lg font-semibold tracking-wide">
+      In Case of Emergency Call:
     </p>
   </div>
-  <div className="w-full flex justify-center items-center text-center mt-2 sm:mt-0">
-    <p className="text-lg font-medium text-[#0A3D62] tracking-wide">
-      Available <span className="text-[20px] text-red-400">24</span>/
-      <span className="text-[20px] text-red-400">7</span>
-    </p>
+
+  <div className="flex gap-6">
+    <span className="text-2xl font-bold text-red-400">108</span>
+    <span className="text-2xl font-bold text-red-400">112</span>
   </div>
 </div>
+
+{/* styling space */}
+      <div className="h-[1px] w-full bg-gradient-to-r from-cyan-400 via-indigo-500 to-red-500"></div>
 
         </>
     )
