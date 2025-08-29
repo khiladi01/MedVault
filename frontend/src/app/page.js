@@ -1,6 +1,6 @@
 "use client"
 import React, { useState, useRef, useEffect } from "react"
-// import CountUp from 'react-countup';
+import CountUp from 'react-countup';
 import Link from "next/link"
 import Image from "next/image"
 import aboutImg from "./assets/aboutimg (1).jpg"
@@ -11,7 +11,7 @@ import neuroImg from "./assets/neurologist.jpg"
 import orthoImg from "./assets/orthopady.jpg"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
-import "./globals.css"
+import "./globals.css";
 
 export default function Home() {
   const [isTrustSectionVisible, setIsTrustSectionVisible] = useState(false);
@@ -228,29 +228,46 @@ export default function Home() {
         
         <div>
           <h2 className="text-3xl md:text-4xl font-bold text-teal-600">
-            {isTrustSectionVisible ? "10000+" : "0+"}
-          </h2>
+      {isTrustSectionVisible ? (
+        <CountUp end={10000} duration={5} suffix="+" />
+      ) : (
+        "0+"
+      )}
+    </h2>
           <p className="text-gray-600">Patients Served</p>
         </div>
 
         <div>
+          
           <h2 className="text-3xl md:text-4xl font-bold text-teal-600">
-            {isTrustSectionVisible ? "500+" : "0+"}
-          </h2>
+      {isTrustSectionVisible ? (
+        <CountUp end={500} duration={5} suffix="+" />
+      ) : (
+        "0+"
+      )}
+    </h2>
           <p className="text-gray-600">Doctors Onboard</p>
         </div>
 
         <div>
           <h2 className="text-3xl md:text-4xl font-bold text-teal-600">
-            {isTrustSectionVisible ? "99%" : "0%"}
-          </h2>
+      {isTrustSectionVisible ? (
+        <CountUp end={99} duration={5} suffix="%" />
+      ) : (
+        "0"
+      )}
+    </h2>
           <p className="text-gray-600">Data Security</p>
         </div>
 
         <div>
           <h2 className="text-3xl md:text-4xl font-bold text-teal-600">
-            {isTrustSectionVisible ? "24/7" : "0/7"}
-          </h2>
+      {isTrustSectionVisible ? (
+        <CountUp end={24} duration={5} suffix="/7" />
+      ) : (
+        "0"
+      )}
+    </h2>
           <p className="text-gray-600">Support</p>
         </div>
 
